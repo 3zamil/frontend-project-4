@@ -10,6 +10,8 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
 
+import NoteIndex from './notes/NoteIndex'
+
 class App extends Component {
   constructor () {
     super()
@@ -50,7 +52,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-  
+          {/* ------------ */}
+          <AuthenticatedRoute user={user} path='/' render={() => (
+              <NoteIndex user={user} />
+            )} />
 
         </main>
       </React.Fragment>
