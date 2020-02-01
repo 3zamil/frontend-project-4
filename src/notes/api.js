@@ -10,17 +10,20 @@ headers:{
 })
 }
 export const show = (id) => {
-    return axios({url:apiUrl + "/notes/" +id,
+    return axios({url:apiUrl + "/notes/" + id,
     method: "get"
     })
 }
-export const create = (note) => {
+export const create = (note, user) => {
         return axios({url:apiUrl + "/notes/",
         method: "post",
+        headers:{
+            "Authorization": `Bearer ${user.token}`
+        },
         data:{note:note}
         })
 }
-    export const update = (note,id) => {
+    export const update = (note, id) => {
     return axios({url:apiUrl + "/notes/" + id,
             method: "put",
             data:{note:note}
@@ -28,7 +31,7 @@ export const create = (note) => {
 }        
     export const destroy = (user, id) => {
                 return axios({
-                    url:apiUrl + "/notes/" +id,
+                    url:apiUrl + "/notes/" + id,
                 method: "delete",
                 headers:{
                     "Authorization": `Bearer ${user.token}`

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import './index.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
+// import App from './stories/generate-node-props'
+
 import { HashRouter } from 'react-router-dom'
 
 const appJsx = (

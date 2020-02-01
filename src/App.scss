@@ -46,3 +46,21 @@ $charcoal: #ccc;
     max-width: 200px;
   }
 }
+.saved {
+  opacity: 0;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+  border-radius: 3px;
+  
+  &-visible {
+    opacity: .7;
+  }
+}
+
+:focus {outline:none;}
+
+.one-note {
+  border: .5px solid $charcoal;
+  padding: 5px;
+  border-radius: 3px;
+}
